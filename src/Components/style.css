@@ -1,0 +1,10 @@
+.advanced-react-section {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  margin-bottom: 50px;
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
