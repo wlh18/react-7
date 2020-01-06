@@ -10,9 +10,12 @@ const Hocs = props => {
   return (
     <section className="advanced-react-section">
       <h1>HOCS</h1>
-      <button onClick={() => setIsAdmin(!isAdmin)}>Log in/out</button>
       <ComplexButton />
-      <ComplexButton darkMode />
+      <ComplexButton
+        text="Log in/out"
+        onClick={() => setIsAdmin(!isAdmin)}
+        darkMode
+      />
       <SimpleButton />
       <SimpleButton darkMode />
       <Square darkMode admin={isAdmin} />

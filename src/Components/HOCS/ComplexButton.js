@@ -23,7 +23,11 @@ const ComplexButton = props => {
   if (props.darkMode) {
     style = { ...style, ...styles.darkMode }
   }
-  return <button style={style}>Complex Button</button>
+  return (
+    <button onClick={props.onClick} style={style}>
+      {props.text ? props.text : `Complex Button`}
+    </button>
+  )
 }
 
 export default ComplexButton
