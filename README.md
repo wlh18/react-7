@@ -8,7 +8,8 @@ In this lecture we introduce 3 advanced concepts in React. Each of these will im
 
 > Switch to branch `completed` to see finished
 >
-> [Lecture slides](https://slides.com/mattbodily/deck-ab3ff2#/)
+
+[Lecture slides](https://slides.com/mattbodily/deck-ab3ff2#/)
 
 # Student Learning Objectives
 
