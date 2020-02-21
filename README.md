@@ -470,6 +470,20 @@ This pattern can be particularly confusing for students as it often incorporates
 
 [Making Sense of React Hooks | Medium](https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889) - An excellent article by Dan Abramov breaking down the reasons and use cases of hooks. It is HIGHLY recommended you read through this as it will greatly increase your understanding of hooks.
 
-[Why React Hooks? | TylerMcginnis](https://tylermcginnis.com/why-react-hooks/) - An article breaking down the
+[Why React Hooks? | TylerMcginnis](https://tylermcginnis.com/why-react-hooks/) - An article breaking down the reasons for introducing hooks.
+
+[React Hooks Tutorial | Valentino Gagliardi](https://www.valentinog.com/blog/hooks/) - A tutorial breaking down how to use hooks. Offers comparisons between class based components and functional components using hooks to demonstrate functionality.
+
+[How to Use React Higher-Order Components | Medium](https://medium.com/@rossbulat/how-to-use-react-higher-order-components-c0be6821eb6c) - A great article breaking down a lot of different use cases for HOCS in React
+
+[Understanding Render Props in React | Medium](https://medium.com/rayn-studios/understanding-render-props-in-react-7cf43a0f91fa) - A great article if you are having a hard time wrapping your head around the concept of render props.
 
 ### Videos
+
+[Introducing React Hooks | Traversy Media](https://www.youtube.com/watch?v=mxK8b99iJTg) - Traversy Media's introduction to hooks in React
+
+[React.js Hooks Crash Course | Academind](https://www.youtube.com/watch?v=-MlNBTSg_Ww) - A much more in depth exploration of hooks
+
+[React Higher Order Components Tutorial | techsith](https://www.youtube.com/watch?v=A9_9gQIkfx4) - A tutorial of how to get started with React Higher Order Components
+
+[React Render Props | Andre Madarang](https://www.youtube.com/watch?v=WAQeudhL1PA) - A video breaking down render props in React
