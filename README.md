@@ -4,7 +4,7 @@ In this lecture we introduce 3 advanced concepts in React. Each of these will im
 
 ## Lecture resources
 
-[Lecture repo](https://github.com/andrewwestenskow/advanced-react-lecture)
+To follow along with this lecture, fork and clone this repo.
 
 > Switch to branch `completed` to see finished
 >
