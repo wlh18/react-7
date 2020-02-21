@@ -26,7 +26,7 @@ const BadButton = props => {
   }
   //If a prop of darkMode is provided, it will switch some of the styles to reflect that.
   return (
-    <button style={style}>
+    <button style={style} {...props}>
       {props.text ? props.text : 'Bad Little Button'}
     </button>
   )
