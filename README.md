@@ -56,6 +56,7 @@ export default functionalComponent
 The above is just an example of the format of useState. Let's look at what a simple counter component would look like using useState:
 
 <summary><code>Counter.js</code></summary>
+
 ```jsx
 import React, { useState } from 'react'
 
