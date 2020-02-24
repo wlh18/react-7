@@ -55,6 +55,7 @@ export default functionalComponent
 
 The above is just an example of the format of useState. Let's look at what a simple counter component would look like using useState:
 
+<summary><code>Counter.js</code></summary>
 ```jsx
 import React, { useState } from 'react'
 
@@ -73,6 +74,7 @@ export default () => {
 
 The useState hook can be used to store any data type. Let's look at an example of using our useState hook to keep track of a list of movies and the value of an input box:
 
+<summary><code>MovieList.js</code></summary>
 ```js
 import React, { useState } from 'react'
 
@@ -134,6 +136,7 @@ export default functionalComponent
 
 The above is just an example of the format. Let's look at an example of a component that uses useEffect to make a network request and set the result on state.
 
+<summary><code>Pokemon.js</code></summary>
 ```js
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -177,6 +180,7 @@ export default HigherOrderComponent
 
 Let's looks at an example of how a Higher Order Component can save us time in applying dynamic styling to our components. The code below shows a custom button which will allow us to dynamically provide styling to our button based on whether or not a prop of darkMode is supplied. All of this logic is localized to this button and is not reusable without copy and pasting.
 
+<summary><code>BadButton.js</code></summary>
 ```js
 import React from 'react'
 
@@ -218,6 +222,7 @@ export default BadButton
 
 Let's look at how building a Higher Order Component to handle the logic of switching styles can make this whole process easier and more reusable.
 
+<summary><code>styleHoc.js</code></summary>
 ```js
 import React, { Component } from 'react'
 
@@ -256,9 +261,10 @@ export default WrappedComponent => {
 
 Now let's write a couple of components to take advantage of
 
+<summary><code>GoodButton.js</code></summary>
 ```js
 import React from 'react'
-import StyleHOC from './StyleHOC'
+import styleHoc from './styleHoc'
 //We import our StyleHOC to be able to use it.
 
 const GoodButton = props => {
@@ -269,15 +275,16 @@ const GoodButton = props => {
   )
 }
 
-export default StyleHOC(SimpleButton)
+export default StyleHOC(GoodButton)
 //By wrapping our button in our StyleHOC, we get all of the styles and logic from it without having to type it over again.
 ```
 
 Let's build a simple div to take advantage of our style HOC.
 
+<summary><code>Square.js</code></summary>
 ```js
 import React from 'react'
-import StyleHOC from './StyleHOC'
+import styleHoc from './styleHoc'
 
 const Square = props => {
   return (
@@ -286,12 +293,13 @@ const Square = props => {
     </div>
   )
 }
-export default StyleHOC(Square)
+export default styleHoc(Square)
 //The same styles are available to us when wrapping our simple square component.
 ```
 
 Higher Order Components have many uses. Any kind of logic that we want to apply to our component can be done through a HOC. Imagine you have certain components in your app that you only want to be visible to authenticated users. We can use a HOC to solve that problem. Let's look at an Auth HOC that will use everything we have learned so far including the patten of HOCs, useState, and useEffect:
 
+<summary><code>authHoc.js</code></summary>
 ```js
 import React, { useEffect, useState } from 'react'
 
@@ -318,10 +326,11 @@ export default WrappedComponent => {
 
 Now let's edit our Square component to include our AuthHOC:
 
+<summary><code>Square.js</code></summary>
 ```js
 import React from 'react'
-import StyleHOC from './StyleHOC'
-import AuthHOC from './AuthHOC'
+import styleHoc from './styleHoc'
+import authHoc from './authHoc'
 
 const Square = props => {
   return (
@@ -330,7 +339,7 @@ const Square = props => {
     </div>
   )
 }
-export default AuthHOC(StyleHOC(Square))
+export default authHoc(styleHoc(Square))
 //Now we can pass a prop of admin to our Square component to determine if it should be visible or not.
 ```
 
@@ -342,9 +351,10 @@ Render props are another advanced pattern in React which allow us to reuse logic
 
 props.children is a pattern built into React that allows us to set up a component to dynamically render whatever is passed between its opening and closing tags. `props.children` is available in any react component and will represent any JSX that is written between opening and closing tags. Let's look at a component that will allow us to show or hide its children on demand:
 
+<summary><code>Toggle.js</code></summary>
 ```js
 import React, { useState } from 'react'
-import StyleHOC from './StyleHOC'
+import styleHoc from './StyleHOC'
 
 const Toggle = ({ style, children }) => {
   //In this example we are destructuring the style and children props as part of the function declaration
@@ -362,11 +372,12 @@ const Toggle = ({ style, children }) => {
   )
 }
 
-export default StyleHOC(Toggle)
+export default styleHoc(Toggle)
 ```
 
 Now let's look at how we would use this component:
 
+<summary><code>Hocs.js</code></summary>
 ```js
 <ToggleRenderProps>
   <div>I am the children of ToggleRenderProps</div>
@@ -375,9 +386,10 @@ Now let's look at how we would use this component:
 
 We can also use the render props pattern to pass a render method as props to our function. Let's look at what this will look like:
 
+<summary><code>ToggleRenderProps.js</code></summary>
 ```js
 import React, { useState } from 'react'
-import StyleHOC from './StyleHOC'
+import styleHoc from './styleHoc'
 
 const ToggleRenderProps = props => {
   const [on, setOn] = useState(false)
@@ -387,7 +399,7 @@ const ToggleRenderProps = props => {
   //We are telling our component that it will receive a function called render as a prop.  We will invoke that function and pass it an object containing on, setOn, and style as an argument.
 }
 
-export default StyleHOC(ToggleRenderProps)
+export default styleHoc(ToggleRenderProps)
 
 ////////////////////////////////////
 
@@ -421,9 +433,10 @@ export default StyleHOC(ToggleRenderProps)
 
 We can combine both a pure render prop and `props.children` into a very dynamic component:
 
+<summary><code>ToggleRPC.js</code></summary>
 ```js
 import { useState } from 'react'
-import StyleHOC from './StyleHOC'
+import styleHoc from './styleHoc'
 
 const ToggleRPC = props => {
   const [on, setOn] = useState(false)
@@ -432,7 +445,7 @@ const ToggleRPC = props => {
   //Notice our ToggleRPC component is expecting children to be a function.  This function will be provided when we use our component.  This basically gives us access to a boolean called on that we can use however we choose.
 }
 
-export default StyleHOC(ToggleRPC)
+export default styleHoc(ToggleRPC)
 
 //////////////////////////////
 //Notice below that what is being passed as children is the function itself.  We still get access to our object containing on, setOn, and style.
