@@ -150,7 +150,7 @@ export default props => {
     axios.get('https://pokeapi.co/api/v2/pokemon').then(res => {
       updatePokemon(res.data.results)
     })
-  })
+  }, [])
   return <div>{JSON.stringify(pokemon)}</div>
 }
 ```
@@ -158,7 +158,6 @@ export default props => {
 The above component will fetch some Pokemon from the pokeAPI and set those values on state. A couple of things to note:
 
 - Because we have not included a cleanup function, nothing special will happen when the component unmounts. This is common when making network requests but you should be conscious of what your effect is doing and if it requires any cleanup.
-- We have also not included a dependencies array in our effect. This means that our effect will run after EVERY render. We can limit when the effect runs by including an array of dependencies.
 
 ## Higher Order Components (HOCS)
 
