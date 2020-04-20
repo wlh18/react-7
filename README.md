@@ -7,9 +7,7 @@ Lecture Code: https://github.com/DevMountain/react-7
 To follow along with this lecture, fork and clone this repo.
 
 > Switch to branch `completed` to see finished
->
 
-[Lecture slides](https://slides.com/mattbodily/deck-ab3ff2#/)
 
 # Student Learning Objectives
 
