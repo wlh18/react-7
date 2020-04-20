@@ -1,8 +1,8 @@
-# Advanced React
+# React 7
 
-In this lecture we introduce 3 advanced concepts in React. Each of these will improve your ability to work efficiently in React as well as provide a deeper understanding of React under the hood.
+Lecture Slides: https://slides.com/dmweb/advanced-react
 
-## Lecture resources
+Lecture Code: https://github.com/DevMountain/react-7
 
 To follow along with this lecture, fork and clone this repo.
 
