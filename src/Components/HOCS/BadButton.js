@@ -18,7 +18,7 @@ const styles = {
   },
 }
 
-const BadButton = props => {
+const BadButton = (props) => {
   let style = { ...styles.default }
   //Styles will default to the default styling
   if (props.darkMode) {

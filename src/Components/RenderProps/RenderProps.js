@@ -1,7 +1,9 @@
 import React from 'react'
+import Toggle from './Toggle'
+import ToggleRenderProps from './ToggleRenderProps'
 import '../style.css'
 
-const RenderProps = props => {
+const RenderProps = (props) => {
   return (
     <section className="advanced-react-section">
       <h1>
@@ -14,6 +16,25 @@ const RenderProps = props => {
           Docs
         </a>
       </h1>
+      <Toggle>
+        <div>
+          I AM THE CHILDREN OF TOGGLE
+          <p>Grandchild</p>
+        </div>
+      </Toggle>
+
+      <ToggleRenderProps
+        render={(show, setShow, style) => {
+          return (
+            <div style={style}>
+              {show && <p>Show me your moves</p>}
+              <button onClick={() => setShow(!show)}>
+                Show/Hide your moves
+              </button>
+            </div>
+          )
+        }}
+      />
     </section>
   )
 }

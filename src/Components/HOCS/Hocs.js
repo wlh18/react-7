@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BadButton from './BadButton'
 import Square from './Square'
+import GoodButton from './GoodButton'
 import '../style.css'
 
-const Hocs = props => {
+const Hocs = (props) => {
+  const [admin, setAdmin] = useState(false)
   return (
     <section className="advanced-react-section">
       <h1>
@@ -19,6 +21,9 @@ const Hocs = props => {
       <BadButton />
       <BadButton darkMode />
       <Square />
+      <Square admin={admin} darkMode />
+      <GoodButton />
+      <GoodButton text="Log In/Out" onClick={() => setAdmin(!admin)} darkMode />
     </section>
   )
 }
